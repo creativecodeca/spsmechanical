@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SPS Mechanical</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: { '2xl': '1400px' }
+                },
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))'
+                        }
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-foreground font-body">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-24">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo.webp" alt="SPS Mechanical" class="h-14 w-auto">
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">Home</a>
+                    <a href="services.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">Services</a>
+                    <a href="about.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">About</a>
+                    <a href="contact.html" class="text-primary font-medium transition-colors duration-200">Contact</a>
+                    <a href="clients.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">Clients</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="tel:647-213-0053"
+                        class="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
+                        <i data-lucide="phone" class="h-4 w-4"></i>
+                        <span class="font-medium">647-213-0053</span>
+                    </a>
+                    <a href="contact.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                        Request A Service
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-secondary-foreground">
+                    <i data-lucide="menu" class="h-6 w-6 menu-icon"></i>
+                    <i data-lucide="x" class="h-6 w-6 hidden close-icon"></i>
+                </button>
+            </div>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-secondary-foreground/10">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">Home</a>
+                    <a href="services.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">Services</a>
+                    <a href="about.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">About</a>
+                    <a href="contact.html" class="text-primary font-medium py-2 transition-colors">Contact</a>
+                    <a href="clients.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">Clients</a>
+
+                    <div class="pt-4 border-t border-secondary-foreground/10">
+                        <a href="tel:647-213-0053" class="flex items-center gap-2 text-secondary-foreground mb-4">
+                            <i data-lucide="phone" class="h-4 w-4"></i>
+                            <span class="font-medium">647-213-0053</span>
+                        </a>
+                        <a href="contact.html"
+                            class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                            Request A Service
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 bg-hero">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl">
+                    <p class="text-primary font-medium mb-4">Get In Touch</p>
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">Request A
+                        Service</h1>
+                    <p class="text-lg text-primary-foreground/80 leading-relaxed">
+                        Ready to discuss your project? Fill out the form below and our team will get back to you
+                        promptly.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Contact Info -->
+                    <div class="lg:col-span-1">
+                        <h2 class="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h2>
+                        <div class="space-y-6">
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone" class="h-5 w-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-foreground">Phone</h3>
+                                    <a href="tel:647-213-0053"
+                                        class="text-muted-foreground hover:text-primary transition-colors">647-213-0053</a>
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="h-5 w-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-foreground">Email</h3>
+                                    <a href="mailto:john@spsmechanicalinc.com"
+                                        class="text-muted-foreground hover:text-primary transition-colors">john@spsmechanicalinc.com</a>
+                                </div>
+                            </div>
+                            <!-- Service Area -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="h-5 w-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-foreground">Service Area</h3>
+                                    <p class="text-muted-foreground">Greater Toronto Area, Ontario</p>
+                                </div>
+                            </div>
+                            <!-- Hours -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="clock" class="h-5 w-5 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-foreground">Hours</h3>
+                                    <p class="text-muted-foreground">24/7 Emergency Service</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-6 bg-muted rounded-xl">
+                            <h3 class="font-heading font-semibold text-foreground mb-2">Emergency Service</h3>
+                            <p class="text-muted-foreground mb-4">Have an urgent plumbing issue? We're available 24/7
+                                for emergencies.</p>
+                            <a href="tel:647-213-0053"
+                                class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                                <i data-lucide="phone" class="mr-2 h-4 w-4"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2">
+                        <!-- Success Message (hidden by default) -->
+                        <div id="success-message"
+                            class="hidden bg-primary/10 border-2 border-primary p-8 rounded-2xl shadow-card mb-6">
+                            <div class="text-center">
+                                <div
+                                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="check-circle" class="h-8 w-8 text-primary-foreground"></i>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-foreground mb-2">Thank You!</h3>
+                                <p class="text-muted-foreground mb-4">Your message has been sent successfully. We'll get
+                                    back to you as soon as possible.</p>
+                                <a href="contact.html"
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6">
+                                    Send Another Message
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div id="contact-form-container" class="bg-card p-8 rounded-2xl shadow-card">
+                            <h2 class="text-2xl font-heading font-bold text-foreground mb-6">Send Us a Message</h2>
+                            <form id="contact-form" action="https://formsubmit.co/2ad0bf48bac80030f111c48a009bb8d6"
+                                method="POST" class="space-y-6">
+                                <!-- FormSubmit Configuration -->
+                                <input type="hidden" name="_subject"
+                                    value="New Service Request from SPS Mechanical Website">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="text" name="_honey" style="display:none">
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label htmlFor="name"
+                                            class="block text-sm font-medium text-foreground mb-2">Full Name *</label>
+                                        <input id="name" name="name"
+                                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            placeholder="John Smith" required />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email"
+                                            class="block text-sm font-medium text-foreground mb-2">Email Address
+                                            *</label>
+                                        <input id="email" name="email" type="email"
+                                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            placeholder="john@example.com" required />
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label htmlFor="phone"
+                                            class="block text-sm font-medium text-foreground mb-2">Phone Number
+                                            *</label>
+                                        <input id="phone" name="phone" type="tel"
+                                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            placeholder="(416) 123-4567" required />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="service"
+                                            class="block text-sm font-medium text-foreground mb-2">Service
+                                            Needed</label>
+                                        <select id="service" name="service"
+                                            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                                            <option value="">Select a service</option>
+                                            <option value="residential">Residential Plumbing</option>
+                                            <option value="newconstruction">New Construction & Custom Homes</option>
+                                            <option value="underground">Underground & Specialized Plumbing</option>
+                                            <option value="hvac">HVAC Services</option>
+                                            <option value="leakdetection">Smart Water Leak Detection</option>
+                                            <option value="emergency">Emergency Service</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="message"
+                                        class="block text-sm font-medium text-foreground mb-2">Message *</label>
+                                    <textarea id="message" name="message" rows="5"
+                                        class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="Please describe your project or issue..." required></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8">
+                                    <i data-lucide="send" class="mr-2 h-4 w-4"></i>
+                                    Submit Request
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-secondary-foreground">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <a href="index.html" class="inline-block mb-4">
+                        <img src="assets/logo.webp" alt="SPS Mechanical" class="h-16 w-auto">
+                    </a>
+                    <p class="text-secondary-foreground/80 leading-relaxed">
+                        Professional plumbing and HVAC solutions for residential and commercial properties across the
+                        Greater Toronto Area.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4 text-primary-foreground">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Services</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">About</a></li>
+                        <li><a href="contact.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Contact</a>
+                        </li>
+                        <li><a href="clients.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Clients</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4 text-primary-foreground">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Residential
+                                Plumbing</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">New
+                                Construction & Custom Homes</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Underground &
+                                Specialized Plumbing</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">HVAC
+                                Services</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Smart Water
+                                Leak Detection</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4 text-primary-foreground">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:647-213-0053"
+                                class="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
+                                <i data-lucide="phone" class="h-5 w-5 text-primary"></i>
+                                <span>647-213-0053</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:john@spsmechanicalinc.com"
+                                class="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
+                                <i data-lucide="mail" class="h-5 w-5 text-primary"></i>
+                                <span>john@spsmechanicalinc.com</span>
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-3 text-secondary-foreground/80">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-primary flex-shrink-0 mt-0.5"></i>
+                            <span>Greater Toronto Area, Ontario</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-secondary-foreground/10 mt-12 pt-8 text-center text-secondary-foreground/60">
+                <p>&copy; 2025 SPS Mechanical Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
