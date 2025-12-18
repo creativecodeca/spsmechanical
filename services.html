@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SPS Mechanical</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: { '2xl': '1400px' }
+                },
+                extend: {
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))'
+                        }
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-background text-foreground font-body">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-secondary-foreground/10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-24">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo.webp" alt="SPS Mechanical" class="h-14 w-auto">
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">Home</a>
+                    <a href="services.html" class="text-primary font-medium transition-colors duration-200">Services</a>
+                    <a href="about.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">About</a>
+                    <a href="contact.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">Contact</a>
+                    <a href="clients.html"
+                        class="text-secondary-foreground hover:text-primary font-medium transition-colors duration-200">Clients</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="tel:647-213-0053"
+                        class="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
+                        <i data-lucide="phone" class="h-4 w-4"></i>
+                        <span class="font-medium">647-213-0053</span>
+                    </a>
+                    <a href="contact.html"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                        Request A Service
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-secondary-foreground">
+                    <i data-lucide="menu" class="h-6 w-6 menu-icon"></i>
+                    <i data-lucide="x" class="h-6 w-6 hidden close-icon"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-secondary-foreground/10">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">Home</a>
+                    <a href="services.html" class="text-primary font-medium py-2 transition-colors">Services</a>
+                    <a href="about.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">About</a>
+                    <a href="contact.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">Contact</a>
+                    <a href="clients.html"
+                        class="text-secondary-foreground hover:text-primary font-medium py-2 transition-colors">Clients</a>
+                    <div class="pt-4 border-t border-secondary-foreground/10">
+                        <a href="tel:647-213-0053" class="flex items-center gap-2 text-secondary-foreground mb-4">
+                            <i data-lucide="phone" class="h-4 w-4"></i>
+                            <span class="font-medium">647-213-0053</span>
+                        </a>
+                        <a href="contact.html"
+                            class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                            Request A Service
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 bg-hero">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl">
+                    <p class="text-primary font-medium mb-4">What We Offer</p>
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">Our Services
+                    </h1>
+                    <p class="text-lg text-primary-foreground/80 leading-relaxed">
+                        From residential repairs to new construction, SPS Mechanical provides comprehensive plumbing and
+                        HVAC solutions for every project.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Residential Plumbing -->
+        <section class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="home" class="h-7 w-7 text-primary"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold text-foreground mb-4">Residential Plumbing</h2>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Transform your home's plumbing with comprehensive services. From everyday repairs to
+                            complete bathroom renovations, our licensed professionals deliver reliable solutions.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-card">
+                        <img src="assets/service-renovation.jpg" alt="Residential Plumbing"
+                            class="w-full h-80 object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="wrench" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">General Plumbing</h3>
+                        <p class="text-muted-foreground text-sm">Quick response for clogs, leaks, and routine
+                            maintenance using advanced diagnostic tools.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="pen-tool" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Fixture Installation</h3>
+                        <p class="text-muted-foreground text-sm">Professional installation of faucets, showers, toilets,
+                            and more from all major brands.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="sparkles" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Plumbing Renovations</h3>
+                        <p class="text-muted-foreground text-sm">Complete kitchen and bathroom renovations with system
+                            upgrades and new layouts.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="clock" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Emergency Plumbing</h3>
+                        <p class="text-muted-foreground text-sm">24/7 emergency response for burst pipes, severe leaks,
+                            and urgent situations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Construction -->
+        <section class="py-20 bg-muted">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:order-2">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="building" class="h-7 w-7 text-primary"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold text-foreground mb-4">New Construction & Custom Homes
+                        </h2>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Build your dream home on a solid plumbing foundation. We work closely with builders and
+                            homeowners to design and install complete systems that exceed building codes.
+                        </p>
+                    </div>
+                    <div class="lg:order-1 rounded-2xl overflow-hidden shadow-card">
+                        <img src="assets/Rough In Landscape.jpg" alt="New Construction Plumbing"
+                            class="w-full h-80 object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="hard-hat" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Complete Plumbing Systems</h3>
+                        <p class="text-muted-foreground text-sm">Custom systems tailored to your home's layout with
+                            water pressure optimization and energy-efficient solutions.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="layers" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Plumbing Rough-Ins</h3>
+                        <p class="text-muted-foreground text-sm">Precision rough-in work with supply lines, waste lines,
+                            and venting installed to exact blueprints and codes.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="pen-tool" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Final Fixture Installation</h3>
+                        <p class="text-muted-foreground text-sm">Meticulous installation of all final fixtures with
+                            testing and pressure adjustments before walkthrough.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Underground & Specialized -->
+        <section class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="shovel" class="h-7 w-7 text-primary"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold text-foreground mb-4">Underground & Specialized
+                            Plumbing</h2>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            When plumbing challenges go below ground, our specialized team has the expertise and
+                            equipment to handle complex installations with minimal disruption.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-card">
+                        <img src="assets/Custom Underground Landscape.jpg" alt="Underground Plumbing"
+                            class="w-full h-80 object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="pipette" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Water & Sewer Line Installation</h3>
+                        <p class="text-muted-foreground text-sm">Professional underground line installation using modern
+                            trenchless technologies to minimize landscape disruption.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="shovel" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Trenching & Excavation</h3>
+                        <p class="text-muted-foreground text-sm">Precise trenching and excavation for new installations,
+                            major repairs, and system upgrades with property restoration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HVAC Services -->
+        <section class="py-20 bg-muted">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:order-2">
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="thermometer-sun" class="h-7 w-7 text-primary"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold text-foreground mb-4">HVAC Services</h2>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Keep any space comfortable year-round with complete heating, ventilation, and air
+                            conditioning solutions for residential and commercial properties.
+                        </p>
+                    </div>
+                    <div class="lg:order-1 rounded-2xl overflow-hidden shadow-card">
+                        <img src="assets/service-hvac.jpg" alt="HVAC Services" class="w-full h-80 object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="thermometer" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Installation & Replacement</h3>
+                        <p class="text-muted-foreground text-sm">Professional HVAC installations including furnaces, AC,
+                            heat pumps, mini-splits, boilers, and geothermal systems.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="wrench" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Repair & Maintenance</h3>
+                        <p class="text-muted-foreground text-sm">Expert repairs and preventive maintenance for all
+                            brands with 24/7 emergency response available.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-xl border border-border">
+                        <i data-lucide="wind" class="h-8 w-8 text-primary mb-4"></i>
+                        <h3 class="font-heading font-semibold text-foreground mb-2">Indoor Air Quality</h3>
+                        <p class="text-muted-foreground text-sm">Air purification, humidity control, advanced
+                            filtration, and ventilation upgrades for any property type.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Water Leak Detection -->
+        <section class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="shield" class="h-7 w-7 text-primary"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold text-foreground mb-4">Smart Water Leak Detection</h2>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Protect your home from catastrophic water damage with intelligent leak detection technology.
+                            This advanced system monitors your property 24/7, detecting leaks as small as a drop per
+                            minute and automatically shutting off your water supply to prevent costly flooding.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-foreground">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>24/7 continuous monitoring
+                            </li>
+                            <li class="flex items-center gap-3 text-foreground">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>Automatic water shutoff
+                            </li>
+                            <li class="flex items-center gap-3 text-foreground">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>Smartphone app control
+                            </li>
+                            <li class="flex items-center gap-3 text-foreground">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>Instant leak alerts
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                            Get A Quote <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="assets/moen-leak.webp" alt="Moen Smart Water Leak Detection System"
+                            class="max-w-md w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-sky-gradient">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Need Our Help?</h2>
+                <p class="text-primary-foreground/80 max-w-xl mx-auto mb-8">
+                    Contact us today for professional plumbing and HVAC services. We're ready to help!
+                </p>
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8">
+                    Request A Service <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-secondary-foreground">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <a href="index.html" class="inline-block mb-4">
+                        <img src="assets/logo.webp" alt="SPS Mechanical" class="h-16 w-auto">
+                    </a>
+                    <p class="text-secondary-foreground/80 leading-relaxed">
+                        Professional plumbing and HVAC solutions for residential and commercial properties across the
+                        Greater Toronto Area.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4 text-primary-foreground">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Services</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">About</a></li>
+                        <li><a href="contact.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Contact</a>
+                        </li>
+                        <li><a href="clients.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Clients</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4 text-primary-foreground">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Residential
+                                Plumbing</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">New
+                                Construction & Custom Homes</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Underground &
+                                Specialized Plumbing</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">HVAC
+                                Services</a></li>
+                        <li><a href="services.html"
+                                class="text-secondary-foreground/80 hover:text-primary transition-colors">Smart Water
+                                Leak Detection</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold text-lg mb-4 text-primary-foreground">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="tel:647-213-0053"
+                                class="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
+                                <i data-lucide="phone" class="h-5 w-5 text-primary"></i>
+                                <span>647-213-0053</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:john@spsmechanicalinc.com"
+                                class="flex items-center gap-3 text-secondary-foreground/80 hover:text-primary transition-colors">
+                                <i data-lucide="mail" class="h-5 w-5 text-primary"></i>
+                                <span>john@spsmechanicalinc.com</span>
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-3 text-secondary-foreground/80">
+                            <i data-lucide="map-pin" class="h-5 w-5 text-primary flex-shrink-0 mt-0.5"></i>
+                            <span>Greater Toronto Area, Ontario</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-secondary-foreground/10 mt-12 pt-8 text-center text-secondary-foreground/60">
+                <p>&copy; 2025 SPS Mechanical Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
