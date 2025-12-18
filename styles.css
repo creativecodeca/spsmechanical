@@ -1,0 +1,127 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+/* Base Variables */
+:root {
+  --background: 210 20% 98%;
+  --foreground: 215 25% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 215 25% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 25% 15%;
+
+  --primary: 197 52% 55%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 0%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 210 20% 94%;
+  --muted-foreground: 215 15% 45%;
+
+  --accent: 197 52% 48%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 214 20% 88%;
+  --input: 214 20% 88%;
+  --ring: 197 52% 55%;
+
+  --radius: 0.5rem;
+
+  /* Custom design tokens */
+  --sky: 197 52% 55%;
+  --sky-light: 197 52% 70%;
+  --sky-dark: 197 52% 40%;
+  --navy: 215 25% 15%;
+  --navy-light: 215 20% 25%;
+  --slate: 215 15% 35%;
+  
+  --gradient-hero: linear-gradient(135deg, hsl(215 25% 15%) 0%, hsl(215 20% 25%) 100%);
+  --gradient-sky: linear-gradient(135deg, hsl(197 52% 55%) 0%, hsl(197 52% 40%) 100%);
+  --gradient-overlay: linear-gradient(180deg, hsla(215 25% 15% / 0.8) 0%, hsla(215 25% 15% / 0.6) 100%);
+  
+  --shadow-soft: 0 4px 20px -4px hsla(215 25% 15% / 0.15);
+  --shadow-card: 0 8px 30px -8px hsla(215 25% 15% / 0.12);
+  --shadow-glow: 0 0 40px hsla(197 52% 55% / 0.3);
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: 215 25% 10%;
+  --foreground: 210 20% 98%;
+
+  --card: 215 25% 15%;
+  --card-foreground: 210 20% 98%;
+
+  --popover: 215 25% 15%;
+  --popover-foreground: 210 20% 98%;
+
+  --primary: 197 52% 55%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 215 20% 25%;
+  --secondary-foreground: 210 20% 98%;
+
+  --muted: 215 20% 20%;
+  --muted-foreground: 215 15% 60%;
+
+  --accent: 197 52% 55%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 215 20% 25%;
+  --input: 215 20% 25%;
+  --ring: 197 52% 55%;
+}
+
+/* Base Styles */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: var(--gradient-sky);
+}
+
+.bg-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-sky-gradient {
+  background: var(--gradient-sky);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
